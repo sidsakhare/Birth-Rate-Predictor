@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother Weight Prediction</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #e3f2fd, #f3e5f5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-container {
+        background: white;
+        padding: 40px;
+        width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .input-group {
+        margin-bottom: 18px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #444;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #6a5acd;
+        outline: none;
+        box-shadow: 0 0 5px rgba(106,90,205,0.4);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #6a5acd;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #5a4bcf;
+    }
+
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: #4caf50;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Mother Body Weight Prediction</h2>
+
+    <form action="/predict" method="POST">
+        <div class="input-group">
+            <label>bwt</label>
+            <input type="number" name="bwt" required>
+        </div>
+
+        <div class="input-group">
+            <label>Gestation</label>
+            <input type="number" name="gestation" required>
+        </div>
+
+        <div class="input-group">
+            <label>Parity</label>
+            <input type="number" name="parity" required>
+        </div>
+
+        <div class="input-group">
+            <label>Age</label>
+            <input type="number" name="age" required>
+        </div>
+
+        <div class="input-group">
+            <label>Height (cm)</label>
+            <input type="number" name="height" required>
+        </div>
+
+        <div class="input-group">
+            <label>Smoke (0 = No, 1 = Yes)</label>
+            <input type="number" name="smoke" required>
+        </div>
+
+        <button type="submit">Predict Weight</button>
+
+    </form>
+
+   <h3> Predicted Weight: {{ prediction }}</h3>
+     
+
+</div>
+
+</body>
+</html>
+
+
