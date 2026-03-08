@@ -29,7 +29,7 @@ def get_prediction():
 
     baby_df = pd.DataFrame(baby_data_cleaned)
 
-    with open("model/model.pkl", "rb") as file:
+    with open("model.pkl", "rb") as file:
         model = pickle.load(file)
 
     prediction = model.predict(baby_df)
