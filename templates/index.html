@@ -86,13 +86,9 @@
 <body>
 
 <div class="form-container">
-    <h2>Mother Body Weight Prediction</h2>
+    <h2>Baby Body Weight Prediction</h2>
 
     <form action="/predict" method="POST">
-        <div class="input-group">
-            <label>bwt</label>
-            <input type="number" name="bwt" required>
-        </div>
 
         <div class="input-group">
             <label>Gestation</label>
@@ -112,6 +108,11 @@
         <div class="input-group">
             <label>Height (cm)</label>
             <input type="number" name="height" required>
+        </div>
+
+        <div class="input-group">
+            <label>Weight</label>
+            <input type="number" name="weight" required>
         </div>
 
         <div class="input-group">
